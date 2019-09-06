@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
 
+    __weak IBOutlet UITableView *peopleTableView;
 
+    NSMutableArray *people;
+
+}
 
 @end
 

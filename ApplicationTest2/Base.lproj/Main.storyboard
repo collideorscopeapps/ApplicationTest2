@@ -63,6 +63,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="zNP-9e-lCD"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="LbE-Zg-uzK"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -78,6 +82,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="BrM-xl-NmA"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="peopleTableView" destination="MAI-84-OWB" id="0Xm-Uw-smR"/>
                         <segue destination="DV2-VZ-Sl3" kind="show" id="PhP-IL-FpW"/>
                     </connections>
                 </viewController>
