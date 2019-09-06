@@ -13,6 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UserDefaultDB : NSObject
 
 + (NSMutableArray *)getPeople;
++ (void)savePerson:(NSMutableDictionary *)person
+      isInEditMode:(BOOL)editMode;
++ (void)deletePerson:(NSMutableDictionary *)person;
+- (NSInteger)getLastUsableID;
 
 @end
 
