@@ -18,7 +18,7 @@
     
 }
 
-- (NSInteger)getLastUsableID {
++ (NSInteger)getLastUsableID {
     
     NSInteger lastUsableId = 1;
     
@@ -39,6 +39,40 @@
     }
     
     return lastUsableId;
+}
+
++ (void)savePerson:(NSMutableDictionary *)person isInEditMode:(BOOL)editMode {
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    if(editMode) {
+        
+        //TODO
+        NSMutableArray *people = [self getPeople];
+        NSInteger replaceId = [person[@"id"] integerValue] + 1;
+        
+        [people replaceObjectAtIndex:replaceId withObject:person];
+        
+        [userDefaults setObject:people
+                         forKey:@"people"];
+        
+    }
+    else {
+        // inserimento nuovo contatto
+        NSMutableArray *people = [self getPeople];
+        
+        if (!people) {
+            
+            people = [NSMutableArray array];
+        }
+        
+        [people addObject:person];
+        
+        [userDefaults setObject:people
+                         forKey:@"people"];
+    }
+    
+    [userDefaults synchronize];
 }
 
 @end

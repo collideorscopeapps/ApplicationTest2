@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)savePerson:(NSMutableDictionary *)person
       isInEditMode:(BOOL)editMode;
 + (void)deletePerson:(NSMutableDictionary *)person;
-- (NSInteger)getLastUsableID;
++ (NSInteger)getLastUsableID;
 
 @end
 
