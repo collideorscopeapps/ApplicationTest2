@@ -18,7 +18,27 @@
     
 }
 
-
-
+- (NSInteger)getLastUsableID {
+    
+    NSInteger lastUsableId = 1;
+    
+    NSMutableArray *people = [UserDefaultDB getPeople];
+    
+    NSSortDescriptor *sortById = [NSSortDescriptor sortDescriptorWithKey:@"id"
+                                                               ascending:YES];
+    
+    NSArray *sortDescriptors = [NSArray arrayWithObject:sortById];
+    
+    [people sortUsingDescriptors:sortDescriptors];
+    
+    if(people.count > 0) {
+        NSDictionary *person = people[people.count - 1];
+        
+        lastUsableId = [person[@"id"] integerValue] + 1;
+        
+    }
+    
+    return lastUsableId;
+}
 
 @end
