@@ -10,4 +10,15 @@
 
 @implementation UserDefaultDB
 
++ (NSMutableArray *)getPeople {
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    return [userDefaults objectForKey:@"people"];
+    
+}
+
+
+
+
 @end
