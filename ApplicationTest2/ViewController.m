@@ -20,6 +20,7 @@
 
 - (IBAction)addPerson:(id)sender {
     
+    [self openPersonDetailViewController:nil];
 }
 
 #pragma mark - Methods

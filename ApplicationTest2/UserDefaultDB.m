@@ -50,6 +50,7 @@
     if(editMode) {
         
         //TODO
+        /*
         NSArray *temp = [UserDefaultDB getPeople];
         
         NSMutableArray *people = [NSMutableArray arrayWithArray:temp];
@@ -59,7 +60,7 @@
         
         [userDefaults setObject:people
                          forKey:@"people"];
-        
+        */
     }
     else {
         // inserimento nuovo contatto
