@@ -172,7 +172,11 @@
                         <viewLayoutGuide key="safeArea" id="Phy-xB-CLF"/>
                     </view>
                     <navigationItem key="navigationItem" id="00U-ch-fvP">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="LU1-AC-gpt"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="LU1-AC-gpt">
+                            <connections>
+                                <action selector="save:" destination="DV2-VZ-Sl3" id="OqF-W9-TjO"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="addressTextField" destination="MI5-yf-VRD" id="0nC-af-cHl"/>

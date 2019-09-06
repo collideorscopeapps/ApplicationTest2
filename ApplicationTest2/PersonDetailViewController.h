@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PersonDetailViewController : UIViewController {
+@interface PersonDetailViewController : UIViewController<UITextFieldDelegate> {
     
     
     __weak IBOutlet UITextField *nameTextField;

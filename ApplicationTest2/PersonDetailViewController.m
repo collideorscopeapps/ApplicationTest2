@@ -7,12 +7,46 @@
 //
 
 #import "PersonDetailViewController.h"
+#import "UserDefaultDB.h"
 
 @interface PersonDetailViewController ()
 
 @end
 
 @implementation PersonDetailViewController
+
+#pragma mark - Actions
+
+- (IBAction)save:(id)sender {
+
+    BOOL isEditMode  = self.person != nil;
+    
+    if(!isEditMode) {
+        
+        self.person = [NSMutableDictionary dictionary];
+        
+        self.person[@"id"] = [NSNumber numberWithInteger:[UserDefaultDB getLastUsableID]];
+    }
+
+    self.person[@"name"] = nameTextField.text;
+    self.person[@"lastName"] = lastNameTextField.text;
+    self.person[@"address"] = addressTextField.text;
+    
+    // salviamo
+    [UserDefaultDB savePerson:self.person isInEditMode:isEditMode];
+}
+
+#pragma mark - Methods
+
+#pragma mark - Textfield delegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+ 
+    // facciamo sparire la tastiera premendo invio
+    [textField resignFirstResponder];
+    
+    return YES;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
