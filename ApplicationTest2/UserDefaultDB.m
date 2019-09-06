@@ -22,7 +22,9 @@
     
     NSInteger lastUsableId = 1;
     
-    NSMutableArray *people = [UserDefaultDB getPeople];
+    NSArray *temp = [UserDefaultDB getPeople];
+    
+    NSMutableArray *people = [NSMutableArray arrayWithArray:temp];
     
     NSSortDescriptor *sortById = [NSSortDescriptor sortDescriptorWithKey:@"id"
                                                                ascending:YES];
@@ -48,7 +50,9 @@
     if(editMode) {
         
         //TODO
-        NSMutableArray *people = [self getPeople];
+        NSArray *temp = [UserDefaultDB getPeople];
+        
+        NSMutableArray *people = [NSMutableArray arrayWithArray:temp];
         NSInteger replaceId = [person[@"id"] integerValue] + 1;
         
         [people replaceObjectAtIndex:replaceId withObject:person];
@@ -59,7 +63,12 @@
     }
     else {
         // inserimento nuovo contatto
-        NSMutableArray *people = [self getPeople];
+        
+        NSArray *temp = [UserDefaultDB getPeople];
+        
+        NSMutableArray *people = [NSMutableArray arrayWithArray:temp];
+        
+        //[self getPeople];
         
         if (!people) {
             
