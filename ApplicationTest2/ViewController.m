@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "UserDefaultDB.h"
+#import "PersonDetailViewController.h"
 
 @interface ViewController ()
 
@@ -16,6 +17,24 @@
 @implementation ViewController
 
 #pragma mark - Methods
+
+- (IBAction)addPerson:(id)sender {
+    
+}
+
+#pragma mark - Methods
+
+- (void)openPersonDetailViewController:(NSMutableDictionary *)person {
+    
+    PersonDetailViewController *personDetailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"personDetailViewController"];
+    
+    // l'equivalente degli extra passati nell'intent di android
+    personDetailVC.person = person;
+    
+    // equivalente dell'intent start
+    [self.navigationController pushViewController:personDetailVC animated:YES];
+    
+}
 
 - (void)loadPeople {
     

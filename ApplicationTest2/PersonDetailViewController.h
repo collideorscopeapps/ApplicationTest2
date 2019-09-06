@@ -12,6 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PersonDetailViewController : UIViewController
 
+ // l'equivalente degli extra passati nell'intent di android
+// strong: non deve essere rilasciata, a meno di chiudere il view controller
+@property (nonatomic, strong) NSMutableDictionary *person;
+
 @end
 
 NS_ASSUME_NONNULL_END
