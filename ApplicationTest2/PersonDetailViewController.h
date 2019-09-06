@@ -10,7 +10,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PersonDetailViewController : UIViewController
+@interface PersonDetailViewController : UIViewController {
+    
+    
+    __weak IBOutlet UITextField *nameTextField;
+    __weak IBOutlet UITextField *lastNameTextField;
+    __weak IBOutlet UITextField *addressTextField;
+}
 
  // l'equivalente degli extra passati nell'intent di android
 // strong: non deve essere rilasciata, a meno di chiudere il view controller

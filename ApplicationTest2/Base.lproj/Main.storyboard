@@ -79,7 +79,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="ELENCO PERSONE" id="d6v-0o-zlW">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="BrM-xl-NmA"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="BrM-xl-NmA">
+                            <connections>
+                                <action selector="addPerson:" destination="BYZ-38-t0r" id="bd6-vH-5pA"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="peopleTableView" destination="MAI-84-OWB" id="0Xm-Uw-smR"/>
@@ -109,6 +113,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="DV2-VZ-Sl3" id="BTr-wg-3O7"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cognome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vo8-aA-M0t">
                                 <rect key="frame" x="20" y="199" width="75" height="21"/>
@@ -121,6 +128,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="DV2-VZ-Sl3" id="I4h-Xt-NkX"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Indirizzo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vzy-tb-nDE">
                                 <rect key="frame" x="20" y="300" width="65" height="21"/>
@@ -133,6 +143,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="DV2-VZ-Sl3" id="1tK-ii-IS2"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -161,6 +174,11 @@
                     <navigationItem key="navigationItem" id="00U-ch-fvP">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="LU1-AC-gpt"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addressTextField" destination="MI5-yf-VRD" id="0nC-af-cHl"/>
+                        <outlet property="lastNameTextField" destination="mad-sd-5QI" id="lQC-Is-aeF"/>
+                        <outlet property="nameTextField" destination="zzr-of-kpP" id="C9s-Kz-Q6M"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ydh-LE-LIs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
