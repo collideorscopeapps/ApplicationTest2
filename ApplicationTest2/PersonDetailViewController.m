@@ -34,6 +34,16 @@
     
     // salviamo
     [UserDefaultDB savePerson:self.person isInEditMode:isEditMode];
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@""
+                           message:@"Salvataggio effettuato" preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
+                                                       style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                                          
+                                                           [self.navigationController popViewControllerAnimated:YES];
+                                                           
+                                                       }];
 }
 
 #pragma mark - Methods
