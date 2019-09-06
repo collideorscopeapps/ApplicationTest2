@@ -44,6 +44,9 @@
                                                            [self.navigationController popViewControllerAnimated:YES];
                                                            
                                                        }];
+    [alert addAction:okAction];
+    
+    [self presentViewController:alert animated:YES completion:NULL];
 }
 
 #pragma mark - Methods
