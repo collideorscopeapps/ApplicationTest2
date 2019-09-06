@@ -14,6 +14,14 @@
 
 @implementation ViewController
 
+#pragma mark - Methods
+
+#pragma mark - TableView Delegate and Datasource
+
+
+
+#pragma mark - Lifecycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
