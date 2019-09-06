@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "UserDefaultDB.h"
 
 @interface ViewController ()
 
@@ -15,6 +16,14 @@
 @implementation ViewController
 
 #pragma mark - Methods
+
+- (void)loadPeople {
+    
+    people = [UserDefaultDB getPeople];
+    
+    [peopleTableView reloadData];
+}
+
 
 #pragma mark - TableView Delegate and Datasource
 
